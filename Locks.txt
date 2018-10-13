@@ -1,0 +1,9 @@
+Lock: (java.util.concurrent.locks from 1.5v)
+=============================================
+The problems with traditional 'synchronized' keyword
+1)We r not having any flexibility to try for a lock without waiting
+2) There is no way to specify to wait for maximum time for a thread to get lock so that thread will wait until getting the lock which may creates performance problems
+which may cause deadlock
+3)If a thread releases lock then which waiting thread will get that lock, we are not having any control on this
+4) There is no api to list out all waiting threads for a lock
+5)Synchronized we can use either at method level or within the method and it is not possible to use across multiple methods

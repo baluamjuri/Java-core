@@ -1,0 +1,11 @@
+Multithreading
+===================
+Every thread has the priority inherited from its parent by default. Main thread priority is by default 5.
+Green thread(Deprecated) means the thread which is completely handled by JVM without the support of underlying OS support. EX: SUN solaris is the OS which supports Green thread
+Every ThreadGroup by default a child group to System(Thread.currentThread().getThreadGroup().getParent().getName())
+system group contains several system level threads.(Finalizer, Reference Handler, Signal dispatcher, Attach Listener)
+threadgroup.setMaxpriority() --> Threads in the thread group that have already higher priority wont be effected but for newly added threads max priority is applicable(https://www.youtube.com/watch?v=B2L-vVpFP7Y --- Multithreading Enhancement Part- 1|| Introduction || Thread Group)
+thread.stop() is deprecated and not recommended to use because for ex: if one thread has the logic of open db connection, fetch data and release connection. If this thread is stopped/killed in the middle who is responsible to release the connection means connection is wasted here.
+suspend(), resume() are deprecated.
+Daemon thread is a thread which runs in background to support non-daemon threads(EX: Signal dispatcher, Attach Listener, Garbage collector)
+isDaemon(), setDaemon()

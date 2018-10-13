@@ -1,0 +1,55 @@
+get a taste of lambdas and get addicted to streams by Venkat Subramaniam :: https://www.youtube.com/watch?v=1OpAgZvYXLQ
+Parallel and Asynchronous Programming with Streams and CompletableFuture by Venkat Subramaniam :: https://www.youtube.com/watch?v=IwJ-SCfXoAU
+
+For lamda expressions and method reference
+https://www.codementor.io/eh3rrera/using-java-8-method-reference-du10866vx
+
+There are four types of method references:
+1) A method reference to a static method. 
+2) A method reference to an instance method of an object of a particular type. 
+	s -> s.calculateWeight()
+	Shipment::calculateWeight
+	
+	(Sum s, String arg1, String arg2) -> s.doSum(arg1, arg1)
+	Sum::doSum
+3) A method reference to an instance method of an existing object.
+	obj::instanceMethod
+4) A method reference to a constructor.
+
+http://winterbe.com/posts/2014/03/16/java-8-tutorial/
+
+Important points :
+--------------------------------------------------------------------------
+What is the disadvantage with anonymous objects?
+What is the benefit of lambda expressions?(According to memory)
+What is invoke dynamic?(Which is bytecode instrumentation introduced in java 7)
+Collections are in-memory data structure to hold values where as Streams are data structure that is computed on demand.
+effective final in java 8. (A variable or parameter whose value is never changed after it is initialized is effectively final.)
+effective final variable in anonymous inner classes
+
+
+https://www.journaldev.com/2389/java-8-features-with-examples#java8-core
+Some of the important Java 8 features are;
+--------------------------------------------------------------------------
+forEach() method in Iterable interface
+default and static methods in Interfaces
+Functional Interfaces and Lambda Expressions
+Java Stream API for Bulk Data Operations on Collections
+Java Time API
+Collection API improvements
+Concurrency API improvements
+Java IO improvements
+Miscellaneous Core API improvements
+
+Some misc API improvements that might come handy are:
+--------------------------------------------------------------------------
+ThreadLocal static method withInitial(Supplier supplier) to create instance easily.
+Comparator interface has been extended with a lot of default and static methods for natural ordering, reverse order etc.
+min(), max() and sum() methods in Integer, Long and Double wrapper classes.
+logicalAnd(), logicalOr() and logicalXor() methods in Boolean class.
+ZipFile.stream() method to get an ordered Stream over the ZIP file entries. Entries appear in the Stream in the order they appear in the central directory of the ZIP file.
+Several utility methods in Math class.
+jjs command is added to invoke Nashorn Engine.
+jdeps command is added to analyze class files
+JDBC-ODBC Bridge has been removed.
+PermGen memory space has been removed

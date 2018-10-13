@@ -1,0 +1,12 @@
+
+Arraylist		10		(currentcapacity*3/2)+1
+LinkedList		00		1
+Vector			10		Double
+HashSet			16		0.75(Load Factor)
+LinkedHashSet	16		0.75
+HashMap			16		0.75
+linkedHashMap	16		0.75
+HashTable		11		0.75
+TreeSet			00		1
+TreeMap			00		1
+Properties		00		1

@@ -1,0 +1,19 @@
+Java 7 features:
+==================
+String in Switch statement
+Multiple exception catching
+try with autocloseable resources
+Underscores in numeric literals, binary literals
+type inference with generic instance
+Fork join pool
+etc
+
+Java 8:
+==================
+Lamda expressions
+for each in iterable interface and for each remainiing
+default and static methods in interface
+stream api
+JDBC-ODBC bridge has been removed
+permGen space has been removed
+etc
