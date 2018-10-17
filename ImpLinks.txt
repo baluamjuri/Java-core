@@ -1,0 +1,6 @@
+Singleton design pattern:
+-------------------------
+https://www.securecoding.cert.org/confluence/display/java/MSC07-J.+Prevent+multiple+instantiations+of+singleton+objects
+http://javarevisited.blogspot.in/2011/03/10-interview-questions-on-singleton.html
+https://www.youtube.com/watch?v=QsBQnFUx388
+https://www.youtube.com/watch?v=GH5_lhFShfU
