@@ -1,0 +1,119 @@
+public enum Sample {
+
+       ONE
+
+}
+
+After compilation, It will be changed to
+
+public final class Sample extends java.lang.Enum{
+
+    public static final Sample ONE;
+
+    public static Sample[] values();
+
+    public static Sample valueOf(java.lang.String);
+
+    static {};
+
+}
+
+ 
+
+Usage:
+
+ 
+
+public class Test { 
+
+       public static void main(String[] args){
+
+              Sample obj = Sample.ONE;
+
+              System.out.println(obj);
+
+       }
+
+}
+
+ 
+
+o/p:
+
+ONE
+
+ 
+
+=================================================================================================================
+
+ 
+
+public enum Sample {
+
+       ONE(10);
+
+       private int value;
+
+       Sample(int value){
+
+              this.value=value;         
+
+       }
+
+       public int getValue() {
+
+              return value;
+
+       }     
+
+}
+
+ 
+
+After compilation,
+
+ 
+
+public final class Sample extends java.lang.Enum{
+
+    public static final Sample ONE=new Sample(10);
+
+    public static Sample[] values();
+
+    public static Sample valueOf(java.lang.String);
+
+    public int getValue();
+
+    static {};
+
+}
+
+ 
+
+Usage:
+
+ 
+
+public class Test { 
+
+       public static void main(String[] args){
+
+              Sample obj = Sample.ONE;
+
+              System.out.println(obj);
+
+              System.out.println(obj.getValue());
+
+       }
+
+}
+
+ 
+
+o/p:
+
+ 
+
+ONE
+
+10
