@@ -20,8 +20,28 @@ http://winterbe.com/posts/2014/03/16/java-8-tutorial/
 
 Important points :
 --------------------------------------------------------------------------
-What is the disadvantage with anonymous objects?
-What is the benefit of lambda expressions?(According to memory)
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| ANONYMOUS INNER CLASS                                                       |                         LAMBDA EXPRESSION                         |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| It is a class without name.                                                 | It is a method without name.(anonymous function)                  |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| It can extend abstract and concrete class.                                  | It can’t extend abstract and concrete class.                      |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| It can implement an interface that contains any number of abstract methods. | It can implement an interface which contains a single abstract    |
+|                                                                             |  methods.                                                         |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Inside this we can declare instance variables.                              | It does not allow declaration of instance variables, whether the  |
+|                                                                             | variables declared simply act as local variables.                 |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Inside Anonymous inner class, “this” always refers to current anonymous     | Inside Lambda Expression, “this” always refers to current outer   |
+| inner class object but not to outer object.                                 | class object that is, enclosing class object.                     |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| At the time of compilation, a separate .class file will be generated.       | At the time of compilation, no separate .class file will be gener |
+|                                                                             | ated. It simply convert it into private method outer class.       |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+| Memory allocation is on demand, whenever we are creating an object.         | It resides in a permanent memory of JVM.                          |
++-----------------------------------------------------------------------------+-------------------------------------------------------------------+
+
 What is invoke dynamic?(Which is bytecode instrumentation introduced in java 7)
 Collections are in-memory data structure to hold values where as Streams are data structure that is computed on demand.
 effective final in java 8. (A variable or parameter whose value is never changed after it is initialized is effectively final.)
@@ -40,6 +60,7 @@ Collection API improvements
 Concurrency API improvements
 Java IO improvements
 Miscellaneous Core API improvements
+StringJoiner, Entry.compareByValue, compareByKey, 
 
 Some misc API improvements that might come handy are:
 --------------------------------------------------------------------------
@@ -53,3 +74,38 @@ jjs command is added to invoke Nashorn Engine.
 jdeps command is added to analyze class files
 JDBC-ODBC Bridge has been removed.
 PermGen memory space has been removed
+
+Streams:
+========
+Functional interfaces in streams:
+
++-------------+--------------------------------------+---------+
+| Function    |   Takes one arg and returns a value  |         |
++-------------+--------------------------------------+         |
+| BiFunction  |  Takes two args and returns a value  | apply() |
++-------------+--------------------------------------+         |
+| TriFunction | Takes three args and returns a value |         |
++-------------+--------------------------------------+---------+
+`
+
++--------------+--------------------------------------+--------+
+| Predicate    |   Takes one arg and returns boolean  |        |
++--------------+--------------------------------------+        |
+| BiPredicate  |  Takes two args and returns boolean  | test() |
++--------------+--------------------------------------+        |
+| TriPredicate | Takes three args and returns boolean |        |
++--------------+--------------------------------------+--------+
+
+
++----------+-----------------------------------+-------+
+| Supplier | Takes nothing but returns a value | get() |
++----------+-----------------------------------+-------+
+
+
++-------------+--------------------------------------+----------+
+| Consumer    |   Takes an arg and returns nothing   |          |
++-------------+--------------------------------------+          |
+| BiConsumer  | Takes two args and returns nothing   |          |
++-------------+--------------------------------------+ accept() |
+| TriConsumer | Takes three args and returns nothing |          |
++-------------+--------------------------------------+----------+
