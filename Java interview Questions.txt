@@ -1,0 +1,88 @@
+Java 7, 8  features...
+Difference between interfaces and abstract classes in java 8
+SerialVersion id?
+Method overriding rules?
+Method overriding in case of exception declaration(checked, unchecked)
+for-each vs iterator
+Singleton?how to write? what are the ways to break singleton and solutions?
+JVM architecture
+Java MemoryManagement
+Garbage collection process
+How will you write business exceptions?
+Will you catch NullpointerExceptions in your project?(No, we will check if null then throws business exception)
+https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java
+
+
+
+String:
+=======
+String Vs StringBuffer VS StringBuilder
+Why String is immutable?
+String constant pool?
+Can we write our own immutable class?How?
+
+Collection F/W:
+=================
+Difference b/w ArrayList and LinkedList?
+ArrayList Vs Vector?
+
+Internal flow of Hashmap(Table, Bucket, Entry, Hashing, Loadfactor)
+When do you need to override equals, hashcode methods?
+What happens if you don't override equals, hashcode when using user defined object as key?
+what happens becoz of poor hashcode implementation?
+What happens if we use HashMap in multithreading environment?(infinite loop)
+Sort HashMap by values
+ConcurrentModification exception
+
+Comparable VS Comparator
+Difference between HashTable, Hashmap, SynchronizedHashMap, ConcurrentHashMap
+Collections frequency(), min(), max()
+
+Stream API:
+===========
+sor HashMap by value
+Sort array or list of objects
+flatmap
+groupingby 
+
+Multithreading:
+=================
+The default priority of a thread is its parent thread's priority. main() thread's priority is 5.
+What is Synchronization? drawbacks?
+Daemon thread
+Runnable Vs Callable
+Executor's submit vs execute
+Completable Future
+
+Spring Rest:
+==============
+Circular Dependency? Solution?
+Scopes? usage?
+Exceptional Handling
+
+Http status code:
+			Success			Failure	
+GET			200/204/206		404					
+PUT			200				404
+POST		201				400
+DELETE		200				404
+PATCH		200				400
+OPTIONS		NA				NA
+
+security: 403 Forbidden, 401 Unauthorized
+
+200	Success				The request has succeeded
+201	Created				The request has been fulfilled and resulted in a new resource being created
+204	No Content			The request has fulfilled the request but does not need to return an entity body
+206	Partial Content		The server has fulfilled the partial GET request for the resource
+400	Bad request			The request could not be understood by the server due to malformed syntax
+404	Not Found			The server has not found anything matching the request URI
+405	Method Not allowed	The method specified in the request is not allowed for the resource identified by the request URI
+409	Conflict			The request could not be completed due to a conflict with the current state of resource
+401 unauthorized
+403 forbidden
+
+Microservices:
+==============
+Architecture
+Configurations of Eureka, Zuul, Cloud config
