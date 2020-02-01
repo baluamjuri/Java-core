@@ -5,14 +5,13 @@ Method overriding rules?
 Method overriding in case of exception declaration(checked, unchecked)
 for-each vs iterator
 Singleton?how to write? what are the ways to break singleton and solutions?
+Marker interface - Cloneable, Serializable
 JVM architecture
 Java MemoryManagement
-Garbage collection process
+Garbage collection process and how do you identify memory leaks?(JvisualVM command and 3rd party plugins or tools)
 How will you write business exceptions?
 Will you catch NullpointerExceptions in your project?(No, we will check if null then throws business exception)
 https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java
-
-
 
 String:
 =======
@@ -27,7 +26,7 @@ Difference b/w ArrayList and LinkedList?
 ArrayList Vs Vector?
 
 Internal flow of Hashmap(Table, Bucket, Entry, Hashing, Loadfactor)
-When do you need to override equals, hashcode methods?
+When do you need to override equals, hashcode methods? what is the contract between them?
 What happens if you don't override equals, hashcode when using user defined object as key?
 what happens becoz of poor hashcode implementation?
 What happens if we use HashMap in multithreading environment?(infinite loop)
@@ -40,7 +39,7 @@ Collections frequency(), min(), max()
 
 Stream API:
 ===========
-sor HashMap by value
+sort HashMap by value
 Sort array or list of objects
 flatmap
 groupingby 
@@ -54,11 +53,12 @@ Runnable Vs Callable
 Executor's submit vs execute
 Completable Future
 
-Spring Rest:
+Spring:
 ==============
 Circular Dependency? Solution?
 Scopes? usage?
 Exceptional Handling
+Injecting a prototype-scoped bean into a singleton bean (Expects @Lookup)
 
 Http status code:
 			Success			Failure	

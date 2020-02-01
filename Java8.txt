@@ -61,6 +61,7 @@ Concurrency API improvements
 Java IO improvements
 Miscellaneous Core API improvements
 StringJoiner, Entry.compareByValue, compareByKey, 
+Integer::sum
 
 Some misc API improvements that might come handy are:
 --------------------------------------------------------------------------
@@ -109,3 +110,9 @@ Functional interfaces in streams:
 +-------------+--------------------------------------+ accept() |
 | TriConsumer | Takes three args and returns nothing |          |
 +-------------+--------------------------------------+----------+
+
+* filter, forEach(Collection, Map), map, flatMap, sorted, distinct, reduce
+* Collectors - toList, toMap, groupingBy, PartitioningBy, counting, averagingXXX, max, min, summarizingStatistics
+* Sequential and Parallel streams
+* Parallel and forEachOrdered combination is valid.
+* Parallel and reduce conmbination is danger, need to take care.
