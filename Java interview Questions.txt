@@ -3,14 +3,20 @@ Difference between interfaces and abstract classes in java 8
 SerialVersion id?
 Method overriding rules?
 Method overriding in case of exception declaration(checked, unchecked)
+	if multiple catch blocks with checked and unchecked exceptions !
 for-each vs iterator
 Singleton?how to write? what are the ways to break singleton and solutions?
 Marker interface - Cloneable, Serializable
-JVM architecture
+JVM architecture (https://dzone.com/articles/jvm-architecture-explained)	
 Java MemoryManagement
 Garbage collection process and how do you identify memory leaks?(JvisualVM command and 3rd party plugins or tools)
+
+Exception Handling:
+===================
+Exception swallowing
 How will you write business exceptions?
-Will you catch NullpointerExceptions in your project?(No, we will check if null then throws business exception)
+How will you avoid NullpointerExceptions? Will you catch NullpointerExceptions in your project?
+(No, we will check if null, log it and then throws business exception)
 https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java
 
 String:
@@ -24,7 +30,6 @@ Collection F/W:
 =================
 Difference b/w ArrayList and LinkedList?
 ArrayList Vs Vector?
-
 Internal flow of Hashmap(Table, Bucket, Entry, Hashing, Loadfactor)
 When do you need to override equals, hashcode methods? what is the contract between them?
 What happens if you don't override equals, hashcode when using user defined object as key?
@@ -37,12 +42,15 @@ Comparable VS Comparator
 Difference between HashTable, Hashmap, SynchronizedHashMap, ConcurrentHashMap
 Collections frequency(), min(), max()
 
+weakHashMap, IdentityHashMap
+
 Stream API:
 ===========
 sort HashMap by value
 Sort array or list of objects
 flatmap
 groupingby 
+distinct
 
 Multithreading:
 =================
@@ -55,6 +63,8 @@ Completable Future
 
 Spring:
 ==============
+Advantage of Spring boot over traditional Spring
+Spring MVC flow
 Circular Dependency? Solution?
 Scopes? usage?
 Exceptional Handling
@@ -86,3 +96,4 @@ Microservices:
 ==============
 Architecture
 Configurations of Eureka, Zuul, Cloud config
+@Enable

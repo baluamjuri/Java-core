@@ -42,6 +42,8 @@ Important points :
 | Memory allocation is on demand, whenever we are creating an object.         | It resides in a permanent memory of JVM.                          |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------+
 
+At runtime anonymous inner classes require class loading, memory allocation, and object initialization and invocation of a non-static method while lambda expression is a compile-time activity and don’t incur extra cost during runtime. So the performance of lambda expression is better as compare to anonymous inner classes.
+
 What is invoke dynamic?(Which is bytecode instrumentation introduced in java 7)
 Collections are in-memory data structure to hold values where as Streams are data structure that is computed on demand.
 effective final in java 8. (A variable or parameter whose value is never changed after it is initialized is effectively final.)
@@ -111,7 +113,7 @@ Functional interfaces in streams:
 | TriConsumer | Takes three args and returns nothing |          |
 +-------------+--------------------------------------+----------+
 
-* filter, forEach(Collection, Map), map, flatMap, sorted, distinct, reduce
+* filter, forEach(Collection, Map), map, mapToObj, flatMap, sorted, distinct, reduce
 * Collectors - toList, toMap, groupingBy, PartitioningBy, counting, averagingXXX, max, min, summarizingStatistics
 * Sequential and Parallel streams
 * Parallel and forEachOrdered combination is valid.
