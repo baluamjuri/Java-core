@@ -1,0 +1,20 @@
+1)Mark all the fields private and final.  (Avoid to use public non-final fields. If your fields is public then you must declare them as final and initialize them in constructor or directly in the declaration line.)
+
+2)Dont provide setter methods
+
+3)Don't allow subclasses to override methods. The simplest way to do this is to declare the class as final.
+
+4)A more sophisticated approach is to make the constructor private and construct instances in factory methods.
+
+5)Making a defensive copy can become a headache, when your mutable field itself comprises of some mutable field, and that in turn can contain some other mutable field. In that case, you would need to make copy of each of them iteratively. We name this iterative copy of mutable fields as Deep Copy.
+
+                Implementing deep copy by yourself may be cumbersome. But,keeping that issue apart, you should consider your class design again, once you see yourself falling into such requirement of making deep defensive copy.
+
+Benefits:
+
+1)Immutable objects are thread-safe so you will not have any synchronization issues.
+
+2)Immutable objects are good Map keys and Set elements, since these typically do not change once created.
+
+3)References to immutable objects can be cached as they are not going to change.
+
