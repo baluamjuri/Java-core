@@ -1,3 +1,4 @@
+
 public class ProducerConsumerClassicStyle {
 	public static void main(String[] args) throws InterruptedException {
 		Item item = new Item();
@@ -58,13 +59,11 @@ class Item{
 	public synchronized void put(int n) throws InterruptedException {
 		if(available) {
 			wait();
-		}else {
-			this.n = n;
-			available = true;
-			System.out.println(Thread.currentThread()+" put "+n);
-			notify();
-			wait();
 		}
+		this.n = n;
+		available = true;
+		System.out.println(Thread.currentThread()+" put "+n);
+		notify();
 	}
 	
 	public synchronized void get() throws InterruptedException {
@@ -72,9 +71,7 @@ class Item{
 			System.out.println(Thread.currentThread()+" got "+ n);
 			available = false;
 			notify();
-			wait();
-		}else {
-			wait();
 		}
+		wait();
 	}
 }
