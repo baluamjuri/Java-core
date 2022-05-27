@@ -1,5 +1,3 @@
-package com.copart.b2b;
-
 public class ProducerConsumerClassicStyle {
 	public static void main(String[] args) throws InterruptedException {
 		Item item = new Item();
