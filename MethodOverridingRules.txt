@@ -8,7 +8,7 @@
 
 5)The overriding method must not have more restrictive access modifier.
 
-6)An overriding method can throw any uncheck exceptions, regardless of whether the overridden method throws exceptions or not. However the overriding method should not throw checked exceptions that are new or broader than the ones declared by the overridden method.
+6)An overriding method can throw any uncheck exceptions, regardless of whether the overridden method throws exceptions or not. However the overriding method should not throw checked exceptions that are new or broader(super class) than the ones declared by the overridden method.
 
 7)The synchronized/strictfp modifiers have no effect on the rules of overriding.
 
