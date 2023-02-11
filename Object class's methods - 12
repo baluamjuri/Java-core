@@ -1,0 +1,10 @@
+toString
+equals
+hashcode
+wait - 3
+notify
+notifyAll
+finalize
+clone
+getClass
+newInstancePrototype(Class)
