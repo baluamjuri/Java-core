@@ -1,6 +1,7 @@
 1) Only inherited methods can be overridden.
 
-2)private,Final and static methods cannot be overridden. A static method in a subclass may hide another static one in a superclass, and that’s called hiding.
+2)private,Final and static methods cannot be overridden. 
+A static method in a subclass may hide another static one in a superclass, and that’s called hiding.
 
 3)The overriding method must have same argument list.
 
@@ -8,7 +9,9 @@
 
 5)The overriding method must not have more restrictive access modifier.
 
-6)An overriding method can throw any uncheck exceptions, regardless of whether the overridden method throws exceptions or not. However the overriding(child's) method should not throw checked exceptions that are new or broader(super class) than the ones declared by the overridden method(parent's).
+6)An overriding method can throw any uncheck exceptions, regardless of whether the overridden method throws exceptions or not. 
+However the overriding(child's) method should not throw checked exceptions that are new or broader(super class) than the ones declared
+by the overridden method(parent's).
 
 7)The synchronized/strictfp modifiers have no effect on the rules of overriding.
 
