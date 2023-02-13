@@ -19,13 +19,18 @@ SerialVersion id?
 Method overriding rules?
 Method overriding in case of exception declaration(checked, unchecked)
 	if multiple catch blocks with checked and unchecked exceptions !
+	https://www.geeksforgeeks.org/overriding-in-java/
 for-each vs iterator
 Singleton?how to write? what are the ways to break singleton and solutions?
 Marker interface - Cloneable, Serializable
-JVM architecture (https://dzone.com/articles/jvm-architecture-explained)	
+JVM architecture (https://dzone.com/articles/jvm-architecture-explained)
+	https://dzone.com/articles/jvm-architecture-explained
+	https://www.geeksforgeeks.org/jvm-works-jvm-architecture/
 Java MemoryManagement
+jvm vs jre vs jdk 
+	https://www.geeksforgeeks.org/differences-jdk-jre-jvm/
 Garbage collection process and how do you identify memory leaks?(JvisualVM command and 3rd party plugins or tools)
-
+	https://www.geeksforgeeks.org/garbage-collection-java/
 Exception Handling:
 ===================
 Exception swallowing
