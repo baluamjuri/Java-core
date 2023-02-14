@@ -38,6 +38,8 @@ How will you write business exceptions?
 How will you avoid NullpointerExceptions? Will you catch NullpointerExceptions in your project?
 (No, we will check if null, log it and then throws business exception)
 https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java
+Will an Error Be Caught by Catch Block in Java - https://www.baeldung.com/java-error-catch
+Different type of outOfMemoryErrors in java, permgen space, stackoverflow error(infinitely calling - recursive method)
 
 String:
 =======
