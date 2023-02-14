@@ -39,8 +39,13 @@ How will you avoid NullpointerExceptions? Will you catch NullpointerExceptions i
 (No, we will check if null, log it and then throws business exception)
 https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java
 Will an Error Be Caught by Catch Block in Java - https://www.baeldung.com/java-error-catch
-Different type of outOfMemoryErrors in java, permgen space, stackoverflow error(infinitely calling - recursive method)
-
+Different type of outOfMemoryErrors in java, stackoverflow error(infinitely calling - recursive method)
+OutOfMemoryError
+	heap space
+	GC Overhead limit exceeded
+	permgen space(prior java 8)
+	Metaspace(Java 8 onwards)
+	etc
 String:
 =======
 String Vs StringBuffer VS StringBuilder
