@@ -26,7 +26,7 @@ Marker interface - Cloneable, Serializable
 JVM architecture (https://dzone.com/articles/jvm-architecture-explained)
 	https://dzone.com/articles/jvm-architecture-explained
 	https://www.geeksforgeeks.org/jvm-works-jvm-architecture/
-Java MemoryManagement
+Java MemoryManagement (heap, non heap[code cache, permgen[method area, string pool]], stack area, PC registers, native stack)
 jvm vs jre vs jdk 
 	https://www.geeksforgeeks.org/differences-jdk-jre-jvm/
 Garbage collection process and how do you identify memory leaks?(JvisualVM command and 3rd party plugins or tools)
