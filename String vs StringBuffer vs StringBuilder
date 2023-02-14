@@ -4,5 +4,6 @@
 Storage Area | Constant String Pool           Heap                       Heap
 Modifiable     |  No (immutable)            Yes( mutable )          Yes( mutable )
 Thread Safe   |           Yes               Yes                     No
- Performance |         Slow                 Slow but faster         Faster than String     
+ Performance |         Slow                 Slow but faster         Fast
+                                            than String     
 -----------------------------------------------------------------------------------
