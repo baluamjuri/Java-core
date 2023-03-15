@@ -14,7 +14,8 @@ ExecutorService
 ThreadPoolExecutor
 ScheduledExecutorService
 ForkJoinPool
-Lock(lock(), unlock(), trylock(), trylock(time))
+Lock(lock(), unlock(), trylock(), trylock(time)) - similar to synchronized
+Condition(await, signal, singnalAll) - similar to wait, notify, notifyAll
 ReadWriteLock
 AtomicInteger(getAndAdd(),getAndIncrement())
 AtomicReferenceObject
