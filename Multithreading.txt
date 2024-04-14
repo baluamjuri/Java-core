@@ -1,0 +1,51 @@
+Multithreading
+===================
+Every thread has the priority inherited from its parent by default. Main thread priority is by default 5.
+Green thread(Deprecated) means the thread which is completely handled by JVM without the support of underlying OS support. EX: SUN solaris is the OS which supports Green thread
+Every ThreadGroup by default a child group to System(Thread.currentThread().getThreadGroup().getParent().getName())
+system group contains several system level threads.(Finalizer, Reference Handler, Signal dispatcher, Attach Listener)
+threadgroup.setMaxpriority() --> Threads in the thread group that have already higher priority wont be effected but for newly added threads max priority is applicable(https://www.youtube.com/watch?v=B2L-vVpFP7Y --- Multithreading Enhancement Part- 1|| Introduction || Thread Group)
+thread.stop() is deprecated and not recommended to use because for ex: if one thread has the logic of open db connection, fetch data and release connection. If this thread is stopped/killed in the middle who is responsible to release the connection means connection is wasted here.
+suspend(), resume() are deprecated.
+Daemon thread is a thread which runs in background to support non-daemon threads(EX: Signal dispatcher, Attach Listener, Garbage collector)
+isDaemon(), setDaemon()
+
+Lock: (java.util.concurrent.locks from 1.5v)
+=============================================
+The problems with traditional 'synchronized' keyword
+1)We r not having any flexibility to try for a lock without waiting
+2) There is no way to specify to wait for maximum time for a thread to get lock so that thread will wait until getting the lock which may creates performance problems
+which may cause deadlock
+3)If a thread releases lock then which waiting thread will get that lock, we are not having any control on this
+4) There is no api to list out all waiting threads for a lock
+5)Synchronized we can use either at method level or within the method and it is not possible to use across multiple methods
+'
+java.util.concurrent :
+======================
+Queue, BlockingQueue, LinkedBlockingQueue, PriorityBlockingQueue(Comparable), (java 6 : -) DelayQueue(Delayed), Synchronous Queue, BlockingDeque, LinkedBlockingDeque
+
+
+Throws Exception	Special Value	Blocks	Times Out
+Insert	add(o)	offer(o)	put(o)	offer(o, timeout, timeunit)
+Remove	remove(o)	poll()	take()	poll(timeout, timeunit)
+Examine	element()	peek()	 	 
+
+CountDownLatch(await(), countDown())
+CyclicBarrier
+Exchanger(exchange())
+Semaphore(acquire(), release())
+ExecutorService
+ThreadPoolExecutor
+ScheduledExecutorService
+ForkJoinPool
+Lock(lock(), unlock(), trylock(), trylock(time)) - similar to synchronized
+Condition(await, signal, singnalAll) - similar to wait, notify, notifyAll
+ReadWriteLock
+AtomicInteger(getAndAdd(),getAndIncrement())
+AtomicReferenceObject
+
+
+
+ConcurrentHashMap(Bucket level Locking, PutIfAbsent(-,-), remove(-,-), replace(-,-,-))
+CopyonArrayList(UnsupportedOperationException, addIfAbsent(), addAllAbsent())
+CopyonArraySet
