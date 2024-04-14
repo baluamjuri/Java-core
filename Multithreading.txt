@@ -44,8 +44,26 @@ ReadWriteLock
 AtomicInteger(getAndAdd(),getAndIncrement())
 AtomicReferenceObject
 
-
-
 ConcurrentHashMap(Bucket level Locking, PutIfAbsent(-,-), remove(-,-), replace(-,-,-))
 CopyonArrayList(UnsupportedOperationException, addIfAbsent(), addAllAbsent())
 CopyonArraySet
+
+CompletableFuture
+-----------------
+https://dzone.com/articles/what-is-project-amber-in-java-1
+runAsync
+supplyAsync
+thenApply
+thenAccept
+thenApplyAync
+thenAcceptAsync
+thenCompose
+thenCombine
+completedFuture()
+complete()
+exceptionally()
+handle()
+whenComplete()
+allOf()
+anyOf()
+join()vs get
