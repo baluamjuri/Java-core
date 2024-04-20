@@ -1,0 +1,1 @@
+Map<String, List<string> getEmployeeNamesGroupByDepartment = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.mapping(Employee::getName, Collectors.toList())))
