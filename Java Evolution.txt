@@ -1,6 +1,28 @@
+Java 7 features:
+==================
+String in Switch statement
+Multiple exception catching
+try with autocloseable resources
+Underscores in numeric literals, binary literals
+type inference with generic instance
+Fork join pool
+etc
+
+Java 8:
+==================
+Lamda expressions
+default and static methods in interface
+stream api
+JDBC-ODBC bridge has been removed
+permGen space has been removed
+Optional, CompletableFuture,
+Arrays.parallelSort(numbers), Nashorn javascript engine
+Type Annotations - List<@NonNull String> strings = new ArrayList<>();
+-----------------------------------------------
+Iterator<String> iterator = fruits.iterator();
+iterator.forEachRemaining((fruit) -> System.out.println(fruit));
+-----------------------------------------------
+
 java 9 - private methods in interface
 java 10 - var, Optional.orElseThrow()
 java 11 - String methods repeat(), isBlank(), strip(), stripLeading(), stripTrailing(), etc.
-java 8 - lamdas, stream aPI, default & static methods in interface, Optional, CompletableFuture,
-		Arrays.parallelSort(numbers), Nashorn javascript engine, permgen removal
-		Type Annotations - List<@NonNull String> strings = new ArrayList<>();
