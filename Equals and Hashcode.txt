@@ -1,0 +1,16 @@
+@Override
+public int hashCode() {
+	return Objects.hash(rcrdStatus, docType, docSeqNum, borderFlag, fileNameFormat);
+}
+
+@Override
+public boolean equals(Object o) {
+	if (this == o)
+		return true;
+	if (o == null || (o.getClass() != this.getClass()))
+		return false;
+	EmployeeList that = (EmployeeList) o;
+	return employeeListCompositeKey.equals(that.employeeListCompositeKey) && createdUser.equals(that.createdUser) &&
+			lastUpdatedUser.equals(that.lastUpdatedUser) && Objects.equals(mandatoryFlag, that.mandatoryFlag) &&
+			Objects.equals(allDocFlag, that.allDocFlag);
+}
