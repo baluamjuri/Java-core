@@ -1,0 +1,6 @@
+java 9 - private methods in interface
+java 10 - var, Optional.orElseThrow()
+java 11 - String methods repeat(), isBlank(), strip(), stripLeading(), stripTrailing(), etc.
+java 8 - lamdas, stream aPI, default & static methods in interface, Optional, CompletableFuture,
+		Arrays.parallelSort(numbers), Nashorn javascript engine, permgen removal
+		Type Annotations - List<@NonNull String> strings = new ArrayList<>();
