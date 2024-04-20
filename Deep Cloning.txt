@@ -1,0 +1,6 @@
+Deep Cloning techniques:
+========================
+import org.apache.commons.lang3.SerializationUtils;
+SerializationUtils.clone(originalObject);
+
+gson.fromJson(gson.toJson(originalObject), YourObject.class);
