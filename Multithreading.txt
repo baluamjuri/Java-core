@@ -20,6 +20,10 @@ which may cause deadlock
 4) There is no api to list out all waiting threads for a lock
 5)Synchronized we can use either at method level or within the method and it is not possible to use across multiple methods
 
+Volatile vs atomic variables
+Volatile -Ensures visibility of changes, suited for simple flags,
+Atomic variables - provides atomic operations,  better for complex operations like counters.
+
 
 Runnable vs Callable
 	Runnable run method does not throw checked exception(public void run(){})
