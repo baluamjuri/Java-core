@@ -19,7 +19,16 @@ which may cause deadlock
 3)If a thread releases lock then which waiting thread will get that lock, we are not having any control on this
 4) There is no api to list out all waiting threads for a lock
 5)Synchronized we can use either at method level or within the method and it is not possible to use across multiple methods
-'
+
+
+Runnable vs Callable
+	Runnable run method does not throw checked exception(public void run(){})
+	Callable call method throw Exception (public T call()throws Exception{}) 
+execute vs submit
+	return type is void for execute,
+	return type is Future<T> if submit callable, Future<Void> for runnables
+
+
 java.util.concurrent :
 ======================
 Queue, BlockingQueue, LinkedBlockingQueue, PriorityBlockingQueue(Comparable), (java 6 : -) DelayQueue(Delayed), Synchronous Queue, BlockingDeque, LinkedBlockingDeque
@@ -66,4 +75,11 @@ handle()
 whenComplete()
 allOf()
 anyOf()
-join()vs get
+join() vs get()
+	join() throws runtime exception (CompletionException, CancellationException)
+		CancellationException - if the computation was cancelled
+		CompletionException - if this future completedexceptionally or a completion computation threw an exception
+	get() throws checked exceptions (InterruptedException, ExecutionException) or runtime exception (CancellationException)
+		CancellationException if this future was cancelled
+		ExecutionException if this future completed exceptionally
+		InterruptedException if the current thread was interrupted
