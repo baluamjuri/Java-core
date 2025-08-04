@@ -1,25 +1,24 @@
-Java 7 features:
+## 🔹 **Java 7 features**
 ==================
-String in Switch statement
-Multiple exception catching
-try with autocloseable resources
-Underscores in numeric literals, binary literals
-type inference with generic instance
-Fork join pool
-etc
+* String in Switch statement
+* Multiple exception catching
+* try with autocloseable resources
+* Underscores in numeric literals, binary literals
+* type inference with generic instance
+* Fork join pool
 
-Java 8:
-==================
-Lamda expressions
-default and static methods in interface
+## 🔹 **Java 8**
+=======================
+* Lamda expressions
+* Default and static methods in interface
 stream api
-JDBC-ODBC bridge has been removed
-permGen space has been removed
-Optional, CompletableFuture,
-Arrays.parallelSort(numbers), Nashorn javascript engine
-Type Annotations - List<@NonNull String> strings = new ArrayList<>();
+* JDBC-ODBC bridge has been removed
+* permGen space has been removed
+* Optional, CompletableFuture,
+* Arrays.parallelSort(numbers), Nashorn javascript engine
+* Type Annotations - List<@NonNull String> strings = new ArrayList<>();
 -----------------------------------------------
-Iterator<String> iterator = fruits.iterator();
+* Iterator<String> iterator = fruits.iterator();
 iterator.forEachRemaining((fruit) -> System.out.println(fruit));
 -----------------------------------------------
 ## 🔹 **Java 9** (Sep 2017)
