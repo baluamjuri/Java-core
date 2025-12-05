@@ -1,0 +1,39 @@
+class Printer implements Runnable{
+    private final int n;
+    private final CyclicBarrier barrier;
+
+    Printer(int n, CyclicBarrier barrier){
+        this.n = n;
+        this.barrier = barrier;
+    }
+
+    public void run(){
+        for(int i=n;i<=100;i+=barrier.getParties()){
+            System.out.println(Thread.currentThread().getName()+" - "+i);
+            try {
+                Thread.sleep(1000);
+                barrier.await(10000, java.util.concurrent.TimeUnit.MILLISECONDS);
+            } catch (TimeoutException e) {
+                System.out.println(Thread.currentThread().getName()+" timed out while waiting at the barrier.");
+            } catch (InterruptedException | BrokenBarrierException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        CyclicBarrier barrier = new CyclicBarrier(3);
+        Printer p1 = new Printer(1, barrier);
+        Printer p2 = new Printer(2, barrier);
+        Printer p3 = new Printer(3, barrier);
+
+        Thread t1 = new Thread(p1, "T1");;
+        Thread t2 = new Thread(p2, "T2");;
+        Thread t3 = new Thread(p3, "T3");
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
