@@ -61,29 +61,82 @@ ConcurrentHashMap(Bucket level Locking, PutIfAbsent(-,-), remove(-,-), replace(-
 CopyonArrayList(UnsupportedOperationException, addIfAbsent(), addAllAbsent())
 CopyonArraySet
 
+
+
 CompletableFuture
 -----------------
-https://dzone.com/articles/what-is-project-amber-in-java-1
-runAsync
-supplyAsync
-thenApply
-thenAccept
-thenApplyAync
-thenAcceptAsync
-thenCompose
-thenCombine
-completedFuture()
-complete()
-exceptionally()
-handle()
-whenComplete()
-allOf()
-anyOf()
+https://concurrencydeepdives.com/guide-completable-future/
+supplyAsync returns the end result - Future<Result> - CompletionException  on fail
+runAsync return void - Future<Void> - When calling get on Future it returns null on success, CompletionException  on fail
+CompletableFuture.failedFuture(new IllegalArgumentException("User can't be null")
+CompletableFuture.completedFuture("Concurrency Deep Dives")
+
 join() vs get()
 	join() throws runtime exception (CompletionException, CancellationException)
 		CancellationException - if the computation was cancelled
 		CompletionException - if this future completedexceptionally or a completion computation threw an exception
 	get() throws checked exceptions (InterruptedException, ExecutionException) or runtime exception (CancellationException)
-		CancellationException if this future was cancelled
-		ExecutionException if this future completed exceptionally
-		InterruptedException if the current thread was interrupted
+		CancellationException(Unchecked) if this future was cancelled
+		ExecutionException(checked) if this future completed exceptionally
+		InterruptedException(checked) if the current thread was interrupted
+		
+		
+
+  <U> CompletableFuture<U> thenApply(Function<? super T,? extends U> fn);
+  <U> CompletableFuture<U> thenApplyAsync(Function<? super T,? extends U> fn);
+  <U> CompletableFuture<U> thenApplyAsync(Function<? super T,? extends U> fn, Executor executor);
+
+apply, accept, run - Function, Consumer, Runnable
+thenApply - takes original value and returns a value
+thenAccept - takes original value and returns void
+thenRun - takes nothing and return nothing
+
+then, either, both
+then - the computation registered is triggered once the original future completes
+either - it must wait for at least one to complete before applying the transformer action. Undetermined which one.
+both - the computation is applied to the result of both futures
+
+  CompletionStage<U>    thenApply       (Function<T,U> fn);
+  CompletionStage<Void> thenAccept      (Consumer<T> action);
+  CompletionStage<Void> thenRun         (Runnable action);
+  // ##
+  CompletionStage<V>    thenCombine     (CompletionStage<U> other, BiFunction<T,U,V> fn);
+  CompletionStage<Void> thenAcceptBoth  (CompletionStage<U> other, BiConsumer<T, U> action);
+  CompletionStage<Void> runAfterBoth    (CompletionStage<?> other, Runnable action);
+  // ##
+  CompletionStage<U>    applyToEither   (CompletionStage<T> other, Function<T, U> fn);
+  CompletionStage<Void> acceptEither    (CompletionStage<T> other, Consumer<T> action);
+  CompletionStage<Void> runAfterEither  (CompletionStage<?> other, Runnable action);
+  
+exceptionally - similar to thenApply but execute when the future throws exception
+CompletableFuture<T> exceptionally(Function<Throwable, T> fn);
+
+handle - thenApply+exceptionally
+	CompletableFuture<String> cF1 = CompletableFuture.completedFuture("Concurrency Deep Dives");
+	CompletableFuture<String> cF2 = CompletableFuture.failedFuture(new RuntimeException("kaBoom"));
+
+	BiFunction<String, Throwable, Integer> transformer =
+		(s, throwable) -> {
+		  if (throwable != null) return 0;
+		  else return s.length();
+		};
+
+	System.out.println("cF1 result: " + cF1.handle(transformer).join());
+	System.out.println("cF2 result: " + cF2.handle(transformer).join());
+
+compose - similar to flatmap where Stream<Stream<?>> to Stream<?>, here CompletableFuture<CompletableFuture<?>> to CompletableFuture<?>
+	CompletableFuture<String> httpCall(String url);  // implementation not shown
+
+
+	CompletableFuture<String> urlF = CompletableFuture.completedFuture("https://www.reddit.com/r/java/");
+	CompletableFuture<String> htmlContentsF = urlF.thenCompose(url -> httpCall(url));
+
+	System.out.println(htmlContentsF.join());
+
+exceptionallyCompose - exceptionally+compose
+whenComplete - two args (value,ex) - return always value - useful when to log something after the action completes
+	If however the action provided throws – which it shouldn’t – than the rules are:
+	1. If the original future completed successfully, then the returned future completed exceptionally with the error thrown by the action provided.
+	2. If the original future completed exceptionally, then the returned future will complete with that same error.
+	
+NonAsync and Async - let's visit the link
